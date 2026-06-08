@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Knights of the Feathered Serpent Productions</title>
+  <meta name="description" content="Contact Knights of the Feathered Serpent Productions for updates, inquiries, and collaborations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html"><span class="brand-mark">KFS</span><span class="brand-name">Knights of the Feathered Serpent</span></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" data-nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="warriors-companion.html">The Warrior's Companion</a>
+      <a href="teachings.html">Teachings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-shell">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Contact</p>
+        <h1>Step onto the path.</h1>
+        <p>Use this page for newsletter interest, book updates, film inquiries, collaborations, and media requests.</p>
+        <p class="contact-note">When you choose an email platform or form service, this placeholder can connect to it directly.</p>
+      </div>
+      <form class="contact-form reveal" data-contact-form>
+        <label>
+          Name
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>
+          Interest
+          <select name="interest">
+            <option>Book updates</option>
+            <option>Film project</option>
+            <option>Newsletter</option>
+            <option>Collaboration</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5"></textarea>
+        </label>
+        <button class="button primary" type="submit">Send Message</button>
+        <p class="form-status" data-form-status aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Knights of the Feathered Serpent Productions</p>
+    <p>knightsofthefeatheredserpent.com</p>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
