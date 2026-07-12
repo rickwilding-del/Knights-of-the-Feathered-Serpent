@@ -542,15 +542,8 @@ h3 {
   min-height: clamp(420px, 42vw, 520px);
   padding: 0;
   overflow: hidden;
-}
-
-.symbol-panel::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background: linear-gradient(to top, rgba(8, 7, 6, 0.96) 0%, rgba(8, 7, 6, 0.62) 32%, rgba(8, 7, 6, 0.08) 72%);
-  pointer-events: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
 }
 
 .symbol-panel-image {
@@ -568,6 +561,15 @@ h3 {
   transform: scale(1.035);
 }
 
+.symbol-panel::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 7, 6, 0.96) 0%, rgba(8, 7, 6, 0.62) 32%, rgba(8, 7, 6, 0.08) 72%);
+  pointer-events: none;
+}
+
 .symbol-panel-content {
   position: relative;
   z-index: 2;
@@ -577,7 +579,7 @@ h3 {
 
 .symbol-panel-content h3 {
   margin-top: 0;
-  color: var(--cream);
+  color: var(--ivory);
   font-size: 1.5rem;
 }
 
@@ -633,6 +635,14 @@ h3 {
 
 .plate {
   margin: 0;
+  position: relative;
+}
+
+.plate-wrapper {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
 }
 
 .plate img {
@@ -641,8 +651,32 @@ h3 {
   aspect-ratio: 0.667;
   object-fit: cover;
   object-position: top center;
-  border: 1px solid var(--line);
   border-radius: 6px;
+}
+
+.lightbox-trigger {
+  cursor: zoom-in;
+}
+
+.lightbox-trigger:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.plate-wrapper:hover .zoom-icon {
+  opacity: 1;
 }
 
 .plate figcaption {
@@ -810,15 +844,6 @@ textarea {
   min-height: 24px;
 }
 
-.lightbox-trigger {
-  cursor: zoom-in;
-}
-
-.lightbox-trigger:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 4px;
-}
-
 body.lightbox-open {
   overflow: hidden;
 }
@@ -868,7 +893,7 @@ body.lightbox-open {
 .lightbox button {
   border: 1px solid rgba(214, 180, 106, 0.55);
   background: rgba(8, 7, 6, 0.82);
-  color: var(--cream);
+  color: var(--ivory);
   cursor: pointer;
 }
 
@@ -895,26 +920,6 @@ body.lightbox-open {
   border-radius: 999px;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
-}
-
-@media (max-width: 620px) {
-  .lightbox {
-    grid-template-columns: 1fr 1fr;
-    align-content: center;
-  }
-
-  .lightbox-figure {
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-
-  .lightbox-nav {
-    justify-self: center;
-  }
-
-  .lightbox-image {
-    max-height: calc(100vh - 210px);
-  }
 }
 
 .reveal {
@@ -1027,7 +1032,18 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 
-  .gate-card {
+  .gate-card,
+  .article-card {
     min-height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }
