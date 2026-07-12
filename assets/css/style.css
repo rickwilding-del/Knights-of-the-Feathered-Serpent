@@ -389,11 +389,11 @@ h3 {
   z-index: 1;
 }
 
-.gate-grid .gate-card:nth-child(1) { background-image: url("/Knights-of-the-Feathered-Serpent/Section1.png"); }
-.gate-grid .gate-card:nth-child(2) { background-image: url("/Knights-of-the-Feathered-Serpent/Section2.png"); }
-.gate-grid .gate-card:nth-child(3) { background-image: url("/Knights-of-the-Feathered-Serpent/Section3.png"); }
-.gate-grid .gate-card:nth-child(4) { background-image: url("/Knights-of-the-Feathered-Serpent/Section4.png"); }
-.gate-grid .gate-card:nth-child(5) { background-image: url("/Knights-of-the-Feathered-Serpent/Section5.png"); }
+.gate-grid .gate-card:nth-child(1) { background-image: url("../images/Section1.png"); }
+.gate-grid .gate-card:nth-child(2) { background-image: url("../images/Section2.png"); }
+.gate-grid .gate-card:nth-child(3) { background-image: url("../images/Section3.png"); }
+.gate-grid .gate-card:nth-child(4) { background-image: url("../images/Section4.png"); }
+.gate-grid .gate-card:nth-child(5) { background-image: url("../images/Section5.png"); }
 .gate-card span,
 .chapter-item span {
   color: var(--gold);
