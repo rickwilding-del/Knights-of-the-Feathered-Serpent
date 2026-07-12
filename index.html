@@ -134,59 +134,7 @@
       </div>
     </div>
   </footer>
-<script>
-(function () {
-  const gateLinks = document.querySelectorAll('.gate-link[data-gate-lightbox]');
-  if (!gateLinks.length) return;
 
-  const lightbox = document.createElement('div');
-  lightbox.className = 'gate-lightbox';
-  lightbox.setAttribute('aria-hidden', 'true');
-  lightbox.innerHTML = `
-    <button class="gate-lightbox__close" aria-label="Close image">&times;</button>
-    <img src="" alt="">
-  `;
-  document.body.appendChild(lightbox);
-
-  const img = lightbox.querySelector('img');
-  const closeBtn = lightbox.querySelector('.gate-lightbox__close');
-
-  function openLightbox(src, alt) {
-    img.src = src;
-    img.alt = alt || 'Expanded gate image';
-    lightbox.classList.add('is-open');
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('is-open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    img.src = '';
-    document.body.style.overflow = '';
-  }
-
-  gateLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      openLightbox(link.getAttribute('href'), link.dataset.gateLightbox || '');
-    });
-  });
-
-  closeBtn.addEventListener('click', closeLightbox);
-
-  lightbox.addEventListener('click', function (e) {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
-      closeLightbox();
-    }
-  });
-})();
-</script>
-  <!-- <script src="assets/js/main.js"></script> -->
-  
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
