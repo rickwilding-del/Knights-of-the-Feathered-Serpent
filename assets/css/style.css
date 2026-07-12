@@ -542,6 +542,8 @@ h3 {
   min-height: clamp(420px, 42vw, 520px);
   padding: 0;
   overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
 }
 
 .symbol-panel::after {
@@ -577,7 +579,7 @@ h3 {
 
 .symbol-panel-content h3 {
   margin-top: 0;
-  color: var(--cream);
+  color: var(--ivory);
   font-size: 1.5rem;
 }
 
@@ -633,6 +635,14 @@ h3 {
 
 .plate {
   margin: 0;
+  position: relative;
+}
+
+.plate-wrapper {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
 }
 
 .plate img {
@@ -641,8 +651,32 @@ h3 {
   aspect-ratio: 0.667;
   object-fit: cover;
   object-position: top center;
-  border: 1px solid var(--line);
   border-radius: 6px;
+}
+
+.lightbox-trigger {
+  cursor: zoom-in;
+}
+
+.lightbox-trigger:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.plate-wrapper:hover .zoom-icon {
+  opacity: 1;
 }
 
 .plate figcaption {
@@ -868,7 +902,7 @@ body.lightbox-open {
 .lightbox button {
   border: 1px solid rgba(214, 180, 106, 0.55);
   background: rgba(8, 7, 6, 0.82);
-  color: var(--cream);
+  color: var(--ivory);
   cursor: pointer;
 }
 

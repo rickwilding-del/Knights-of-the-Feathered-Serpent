@@ -31,18 +31,23 @@
         <p>Use this page for newsletter interest, book updates, film inquiries, collaborations, and media requests.</p>
         <p class="contact-note">You can also email us directly at <a href="mailto:knightsofthefeatheredserpent@gmail.com">knightsofthefeatheredserpent@gmail.com</a>.</p>
       </div>
-      <form class="contact-form reveal" data-contact-form>
+      <div data-fs-success class="form-success" style="display: none; color: var(--gold); font-weight: 700; margin-bottom: 16px;">
+        Thank you for reaching out. We'll be in touch soon.
+      </div>
+      <form class="contact-form reveal" id="contact-form" data-fs-field>
         <label>
           Name
-          <input type="text" name="name" autocomplete="name" required>
+          <input type="text" id="name" name="name" required>
+          <span data-fs-error="name"></span>
         </label>
         <label>
           Email
-          <input type="email" name="email" autocomplete="email" required>
+          <input type="email" id="email" name="email" required>
+          <span data-fs-error="email"></span>
         </label>
         <label>
           Interest
-          <select name="interest">
+          <select id="interest" name="interest">
             <option>Book updates</option>
             <option>Film project</option>
             <option>Newsletter</option>
@@ -51,10 +56,11 @@
         </label>
         <label>
           Message
-          <textarea name="message" rows="5"></textarea>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <span data-fs-error="message"></span>
         </label>
-        <button class="button primary" type="submit">Send Message</button>
-        <p class="form-status" data-form-status aria-live="polite"></p>
+        <button class="button primary" type="submit" data-fs-submit-btn>Send Message</button>
+        <span data-fs-error></span>
       </form>
     </section>
   </main>
@@ -71,6 +77,11 @@
       </div>
     </div>
   </footer>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'mlgqrwob' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
