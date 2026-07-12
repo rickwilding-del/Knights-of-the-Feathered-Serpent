@@ -1069,3 +1069,29 @@ body.lightbox-open {
     animation-duration: 0.01ms !important;
   }
 }
+/* Force home gate backgrounds */
+#featured + .dark-band .gate-grid .gate-card {
+  position: relative !important;
+  overflow: hidden !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+#featured + .dark-band .gate-grid .gate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.25), rgba(8, 7, 6, 0.82));
+  z-index: 0;
+}
+
+#featured + .dark-band .gate-grid .gate-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+#featured + .dark-band .gate-grid .gate-card:nth-child(1) { background-image: url("../images/Section1.png") !important; }
+#featured + .dark-band .gate-grid .gate-card:nth-child(2) { background-image: url("../images/Section2.png") !important; }
+#featured + .dark-band .gate-grid .gate-card:nth-child(3) { background-image: url("../images/Section3.png") !important; }
+#featured + .dark-band .gate-grid .gate-card:nth-child(4) { background-image: url("../images/Section4.png") !important; }
+#featured + .dark-band .gate-grid .gate-card:nth-child(5) { background-image: url("../images/Section5.png") !important; }
